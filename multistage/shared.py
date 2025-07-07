@@ -31,4 +31,5 @@ def fetch_archive(archive_url: str, destination_path: Path):
         top_level_item = items[0]
 
         print(f"Moving {top_level_item} to {destination_path} ...")
+        shutil.rmtree(destination_path, ignore_errors=True)
         shutil.move(top_level_item, destination_path)
